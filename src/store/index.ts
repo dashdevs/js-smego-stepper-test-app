@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import stepper from 'store/modules/stepper';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: { stepper },
 });
 
