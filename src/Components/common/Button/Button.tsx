@@ -24,6 +24,7 @@ const Button = ({
 }: ButtonT) => {
   return (
     <StyledButton
+      data-testid="ClickIndicator"
       onClick={onClick}
       className={className}
       color={disabled ? 'disabled' : color}
