@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
-import styled, { css } from 'styled-components';
+import StyledButton from './Button.style';
 
-type ButtonT = {
+export type ButtonT = {
   onClick?: MouseEventHandler;
   className?: string;
   text: string;
@@ -10,42 +10,9 @@ type ButtonT = {
   disabled?: boolean;
 };
 
-type StyledButtonPropsT = Omit<ButtonT, 'text'>;
+export type ColorT = 'transparent' | 'blue' | 'disabled';
 
-const StyledButton = styled.button<StyledButtonPropsT>`
-  padding: 15px 30px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 26px;
-  ${(props) => getButtonColor(props.color)}
-`;
-
-const transparent = css`
-  background: transparent;
-  border: 1px solid #2b64f5;
-  color: #2b64f5;
-`;
-
-const blue = css`
-  background: #2b64f5;
-  color: #ffffff;
-  border: 1px solid #2b64f5;
-`;
-
-const disabled = css`
-  background: #b2b2b2;
-  color: #ffffff;
-  border: 1px solid #b2b2b2;
-  cursor: default;
-`;
-
-type ColorT = 'transparent' | 'blue' | 'disabled';
-
-const colorToStyleMap: { [$key: string]: any } = { transparent, blue, disabled };
-
-const getButtonColor = (size: ColorT = 'blue') => {
-  return colorToStyleMap[size];
-};
+export type StyledButtonPropsT = Omit<ButtonT, 'text'>;
 
 const Button = ({
   onClick,

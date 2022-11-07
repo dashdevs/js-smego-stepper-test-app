@@ -1,16 +1,6 @@
-import styled from 'styled-components';
 import React from 'react';
 
-const StyledCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  background: #ffffff;
-
-  @media (max-width: 767px) {
-    margin-bottom: 30px;
-  }
-`;
+import StyledCard from './Card.style';
 
 type LayoutT = {
   children: React.ReactElement | Array<React.ReactElement>;

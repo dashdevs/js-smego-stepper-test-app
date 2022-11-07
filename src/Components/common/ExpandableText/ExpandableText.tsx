@@ -1,18 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-
-const Text = styled.span`
-  line-height: 20px;
-  font-size: 14px;
-  color: #7f7f7f;
-`;
-
-const TextButton = styled.span`
-  line-height: 20px;
-  font-size: 14px;
-  color: #2b64f5;
-  cursor: pointer;
-`;
+import { TextButton, Text } from './ExpandableText.style';
 
 type ExpandableTextT = {
   smallPartText: string;
@@ -26,7 +13,7 @@ const ExpandableText = ({ smallPartText, fullText }: ExpandableTextT) => {
     <>
       <Text>{smallPartText}</Text>{' '}
       <TextButton
-        onClick={(event) => {
+        onClick={() => {
           setIsExpanded(!isExpanded);
         }}
       >

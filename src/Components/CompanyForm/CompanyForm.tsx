@@ -1,11 +1,11 @@
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { StyledForm, StepWrapper, Title, ButtonsWrapper } from './CompanyForm.story';
 import CompanyFormStep from '../CompanyFormStep/CompanyFormStep';
 import ContactPersonFormStep from '../ContactPersonFormStep/ContactPersonFormStep';
 import { initialState, nextStep, previousStep } from '../../store/modules/stepper';
-import { Button } from '../common';
+import Button from '../common/Button';
 import { stepTitles } from '../../Pages/Home/Home.constants';
 
 type CompanyFormT = { step: number };
@@ -35,52 +35,6 @@ const validationSchemasSteps = [
     partnership: Yup.bool().oneOf([true], 'Partnership policy title is required'),
   }),
 ];
-
-const ButtonsWrapper = styled.div`
-  display: flex;
-  max-width: 575px;
-  width: 100%;
-  justify-content: space-between;
-  padding: 20px 0 40px;
-
-  @media (max-width: 1440px) {
-    max-width: 360px;
-  }
-
-  @media (max-width: 767px) {
-    max-width: 575px;
-    padding: 30px 20px 20px;
-  }
-`;
-
-const StepWrapper = styled.div`
-  padding-top: 60px;
-  max-width: 575px;
-
-  width: 100%;
-
-  @media (max-width: 1440px) {
-    max-width: 360px;
-  }
-
-  @media (max-width: 767px) {
-    max-width: 575px;
-    padding: 30px 20px 0;
-  }
-`;
-
-const Title = styled.div`
-  width: 100%;
-  padding: 20px;
-  font-size: 20px;
-`;
-
-const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 const CompanyForm = ({ step }: CompanyFormT) => {
   const dispatch = useDispatch();

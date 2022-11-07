@@ -1,17 +1,15 @@
-import { Dropdown, Input, Checkbox, ExpandableText } from 'Components/common';
-import styled from 'styled-components';
+import Dropdown from 'Components/common/Dropdown';
+import Input from 'Components/common/Input';
+import Checkbox from 'Components/common/Checkbox';
+import ExpandableText from 'Components/common/ExpandableText';
+import { PhoneNumberWrapper } from './ContactPersonFormStep.style';
+
 import {
   COUNTRY_CODES_LIST,
-  partnershipPolicy,
-  policyCheckboxFirstPart,
-  policyCheckboxSecondPart,
+  POLICY_CHECKBOX_SECOND_PART,
+  POLICY_CHECKBOX_FIRST_PART,
+  PARTNERSHIP_POLICY,
 } from './ContactPersonFormStep.constants';
-
-const PhoneNumberWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 10px;
-`;
 
 const ContactPersonFormStep = () => {
   return (
@@ -32,13 +30,13 @@ const ContactPersonFormStep = () => {
 
       <Checkbox name="privacyPolicy">
         <ExpandableText
-          smallPartText={policyCheckboxFirstPart}
-          fullText={policyCheckboxSecondPart}
+          smallPartText={POLICY_CHECKBOX_FIRST_PART}
+          fullText={POLICY_CHECKBOX_SECOND_PART}
         />
       </Checkbox>
 
       <Checkbox name="partnership">
-        <ExpandableText smallPartText={partnershipPolicy} fullText={policyCheckboxSecondPart} />
+        <ExpandableText smallPartText={PARTNERSHIP_POLICY} fullText={POLICY_CHECKBOX_SECOND_PART} />
       </Checkbox>
     </div>
   );

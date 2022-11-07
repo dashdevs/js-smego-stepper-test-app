@@ -1,4 +1,5 @@
-import { Dropdown, Input } from 'Components/common';
+import Dropdown from 'Components/common/Dropdown';
+import Input from 'Components/common/Input';
 import { COUNTRIES_LIST } from './CompanyFormStep.constants';
 
 const CompanyFormStep = () => {
